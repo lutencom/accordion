@@ -17,10 +17,10 @@ Accordion is a simple plugin that adds a Gutenberg block for adding accordion dr
 = Features =
 
 * Adds a Gutenberg block for adding accordions to your site.
-* Supports multiple accordions with individual settings for each accordion item.
+* Supports multiple accordions with individual customization options like colors, typography, spacing for each accordion item.
 * Fully responsive.
 * Support for item IDs and direct links.
-* Accessible (for users requiring tabbed keyboard navigation control).git
+* Accessible (for users requiring tabbed keyboard navigation control), with appropriate ARIA attributes and keyboard navigation support.
 
 = Optional Features =
 
@@ -70,24 +70,18 @@ This section describes how to install the plugin and get it working.
 e.g.
 
 1. Upload the plugin files to the `/wp-content/plugins/accordion` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
+2. Activate the plugin through the 'Plugins' screen in WordPress
+3. Insert the Gutenberg block "Accordion". It will display an accordion with a single panel.
+After, multiple panels can be added by pressing the "+" custom button, according to screenshot. https://prnt.sc/Vhp9GknwQC_v
+
 
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. This screen shot https://prnt.sc/Vhp9GknwQC_v displays the admin interface for accordion wrapper.
+2. This screen shot https://prnt.sc/zVW7-OEROC-R displays the admin interface for accordion element.
 
 == Changelog ==
 
 = 0.1.0 =
 * Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
