@@ -1,0 +1,146 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/accordion-element",
+  "version": "0.1.0",
+  "title": "Accordion Element",
+  "category": "widgets",
+  "description": "Example block scaffolded with Create Block tool.",
+  "example": {},
+  "attributes": {
+    "panelTitle": {
+      "source": "html",
+      "type": "string",
+      "default": "First item of accordion",
+      "selector": ".accordion-title"
+    },
+    "panelContent": {
+      "type": "string",
+      "source": "html",
+      "selector": "p",
+      "default": "Lorem ipsum dolor sit amet consectetur. Mauris sit ullamcorper vitae sit adipiscing elementum nam. Ut pretium ipsum odio volutpat hendrerit. Eleifend sit nibh morbi tellus ultricies pellentesque netus commodo. Turpis dignissim hendrerit id lobortis auctor congue sagittis quam purus."
+    },
+    "panelId": {
+      "type": "string"
+    },
+    "panelHeight": {
+      "type": "number"
+    },
+    "isPanelExpanded": {
+      "type": "boolean",
+      "default": true
+    },
+    "panelAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "titleFontSize": {
+      "type": "string",
+      "default": "24px"
+    },
+    "titlePadding": {
+      "type": "object",
+      "default": {
+        "top": "15px",
+        "left": "20px",
+        "right": "20px",
+        "bottom": "15px"
+      }
+    },
+    "titleMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "left": "0px",
+        "right": "0px",
+        "bottom": "0px"
+      }
+    },
+    "contentPadding": {
+      "type": "object",
+      "default": {
+        "top": "0",
+        "left": "20px",
+        "right": "20px",
+        "bottom": "15px"
+      }
+    },
+    "contentMargin": {
+      "type": "object",
+      "default": {
+        "top": "0px",
+        "left": "0px",
+        "right": "0px",
+        "bottom": "0px"
+      }
+    },
+    "contentFontSize": {
+      "type": "string",
+      "default": "20px"
+    },
+    "contentSpacing": {
+      "type": "string",
+      "default": "20px"
+    },
+    "border": {
+      "type": "object",
+      "default": {
+        "width": "1px",
+        "color": "#EAE9ED",
+        "style": "solid"
+      }
+    },
+    "titleColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "contentColor": {
+      "type": "string",
+      "default": "#000"
+    },
+    "style": {
+      "type": "object",
+      "default": {
+        "typography": {
+          "fontSize": "20px"
+        },
+        "elements": {
+          "h3": {
+            "color": {
+              "text": "#000"
+            }
+          }
+        }
+      }
+    }
+  },
+  "parent": [
+    "create-block/accordion"
+  ],
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true,
+      "blockGap": false,
+      "__experimentalDefaultControls": {
+        "padding": true
+      }
+    },
+    "html": true,
+    "typography": {
+      "fontSize": false,
+      "lineHeight": false,
+      "textAlign": false
+    },
+    "ariaLabel": true
+  },
+  "textdomain": "accordion-element",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js"
+}

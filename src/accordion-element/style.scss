@@ -1,0 +1,79 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.accordion {
+  .wp-block-create-block-accordion-element {
+	p, span, button, h1, h2, h3, h4, h5, h6, a {
+	  font-family: "Poppins", sans-serif;
+	  font-weight: 400;
+	  font-style: normal;
+	}
+
+	&:first-of-type {
+	  border-top: none !important;
+	}
+
+	.accordion-heading {
+	  margin: 0;
+
+	  button.accordion-trigger {
+		border: none;
+		outline: none;
+		width: 100%;
+		background: none;
+		font-size: inherit;
+		padding: 0;
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		&[aria-expanded="false"] {
+		  .accordion-icon {
+			&:before {
+			  content: "\e901";
+			}
+		  }
+		}
+
+		&[aria-expanded="true"] {
+		  .accordion-icon {
+			&:before {
+			  content: "\e900";
+			}
+		  }
+		}
+
+		.accordion-icon {
+		  padding-right: 15px;
+		  padding-left: 15px;
+
+		  &:before {
+			font-family: 'icomoon' !important;
+			font-size: 15px;
+		  }
+		}
+
+		.accordion-title {
+		  display: inline-block;
+		  width: 100%;
+		}
+	  }
+	}
+
+	.accordion-panel {
+	  overflow: hidden;
+	  transition: height 0.5s ease;
+
+	}
+  }
+}

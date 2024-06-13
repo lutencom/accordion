@@ -1,0 +1,64 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/accordion-element/style.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Poppins&display=swap);
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/accordion-element/style.scss (1) ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+* {
+  box-sizing: border-box;
+}
+
+.accordion .wp-block-create-block-accordion-element p, .accordion .wp-block-create-block-accordion-element span, .accordion .wp-block-create-block-accordion-element button, .accordion .wp-block-create-block-accordion-element h1, .accordion .wp-block-create-block-accordion-element h2, .accordion .wp-block-create-block-accordion-element h3, .accordion .wp-block-create-block-accordion-element h4, .accordion .wp-block-create-block-accordion-element h5, .accordion .wp-block-create-block-accordion-element h6, .accordion .wp-block-create-block-accordion-element a {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.accordion .wp-block-create-block-accordion-element:first-of-type {
+  border-top: none !important;
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading {
+  margin: 0;
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading button.accordion-trigger {
+  border: none;
+  outline: none;
+  width: 100%;
+  background: none;
+  font-size: inherit;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading button.accordion-trigger[aria-expanded=false] .accordion-icon:before {
+  content: "\e901";
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading button.accordion-trigger[aria-expanded=true] .accordion-icon:before {
+  content: "\e900";
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading button.accordion-trigger .accordion-icon {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading button.accordion-trigger .accordion-icon:before {
+  font-family: "icomoon" !important;
+  font-size: 15px;
+}
+.accordion .wp-block-create-block-accordion-element .accordion-heading button.accordion-trigger .accordion-title {
+  display: inline-block;
+  width: 100%;
+}
+.accordion .wp-block-create-block-accordion-element .accordion-panel {
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+/*# sourceMappingURL=style-index.css.map*/
