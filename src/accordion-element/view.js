@@ -24,4 +24,3 @@
 
 /* eslint-enable no-console */
 'use strict';
-

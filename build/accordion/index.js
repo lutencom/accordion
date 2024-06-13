@@ -28,7 +28,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const TEMPLATE = [["create-block/accordion-element", {}]];
 function Edit(props) {
   const {
@@ -49,14 +48,14 @@ function Edit(props) {
   });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Settings', 'accordion')
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBorderControl, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBorderControl /*control for border editing of Accordion wrapper*/, {
     colors: _assets_colors__WEBPACK_IMPORTED_MODULE_5__["default"],
     onChange: value => setAttributes({
       border: value
     }),
     value: border,
     withSlider: true
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RangeControl /*control which adds border radius of Accordion wrapper*/, {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Radius', 'accordion'),
     value: borderRadius,
     onChange: borderRadius => setAttributes({
@@ -94,26 +93,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./save */ "./src/accordion/save.js");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./block.json */ "./src/accordion/block.json");
 
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 
 
 
-/**
- * Internal dependencies
- */
 
 
 
@@ -166,23 +148,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 
-
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
 const Save = props => {
   const {
     attributes: {

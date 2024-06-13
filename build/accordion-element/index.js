@@ -29,8 +29,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 function Edit(props) {
   const {
     attributes: {
@@ -53,6 +51,8 @@ function Edit(props) {
     clientId,
     setAttributes
   } = props;
+
+  /*gets the panel height for using it in animation purposes*/
   const panelReference = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   if (panelReference.current) {
     setAttributes({
@@ -61,29 +61,15 @@ function Edit(props) {
     });
   }
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
-  const togglePanel = () => {
-    setAttributes({
-      isPanelExpanded: !isPanelExpanded
-    });
-  };
-  const titleHandleChange = newContent => {
-    setAttributes({
-      panelTitle: newContent
-    });
-  };
-  const contentHandleChange = newContent => {
-    setAttributes({
-      panelContent: newContent,
-      panelHeight: panelReference.current.scrollHeight
-    });
-  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Toggle Settings', 'accordion-element')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     checked: !!isPanelExpanded,
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Keep panel expanded?', 'accordion-element'),
     help: isPanelExpanded ? 'Keep panel expanded.' : 'Keep panel collapsed.',
-    onChange: togglePanel
+    onChange: () => setAttributes({
+      isPanelExpanded: !isPanelExpanded
+    })
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Inner Border Settings', 'accordion-element')
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBorderControl, {
@@ -205,11 +191,9 @@ function Edit(props) {
     })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToolbarGroup, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
     value: panelAlign,
-    onChange: nextAlign => {
-      setAttributes({
-        panelAlign: nextAlign
-      });
-    }
+    onChange: nextAlign => setAttributes({
+      panelAlign: nextAlign
+    })
   }))), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps,
     style: {
@@ -222,12 +206,16 @@ function Edit(props) {
     "aria-expanded": isPanelExpanded,
     "aria-controls": "sect" + panelId,
     id: "accordion" + panelId + "ID",
-    onClick: togglePanel
+    onClick: () => setAttributes({
+      isPanelExpanded: !isPanelExpanded
+    })
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     ...blockProps,
     tagName: "span",
     className: "accordion-title",
-    onChange: titleHandleChange,
+    onChange: newContent => setAttributes({
+      panelTitle: newContent
+    }),
     value: panelTitle,
     style: {
       color: titleColor,
@@ -250,7 +238,12 @@ function Edit(props) {
     }
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
     tagName: "p",
-    onChange: contentHandleChange,
+    onChange: newContent => {
+      setAttributes({
+        panelContent: newContent,
+        panelHeight: panelReference.current.scrollHeight
+      });
+    },
     style: {
       color: contentColor,
       textAlign: panelAlign,
@@ -281,34 +274,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/accordion-element/save.js");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/accordion-element/block.json");
 
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-
-
-/**
- * Internal dependencies
- */
 
 
 
 
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+
 const accordionElementIcon = (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("svg", {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 384 512"
@@ -337,27 +307,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 
 
-
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
 function save(props) {
   const {
     attributes: {

@@ -8,10 +8,14 @@ import {
 	ColorPaletteControl
 } from '@wordpress/block-editor';
 import {useRef} from "react";
-import {__experimentalBoxControl as BoxControl} from '@wordpress/components';
-import {__experimentalBorderControl as BorderControl} from '@wordpress/components';
-import {ToolbarGroup, FontSizePicker, PanelBody, ToggleControl, RangeControl,} from '@wordpress/components';
-
+import {
+	ToolbarGroup,
+	FontSizePicker,
+	PanelBody,
+	ToggleControl,
+	__experimentalBoxControl as BoxControl,
+	__experimentalBorderControl as BorderControl
+} from '@wordpress/components';
 import './editor.scss';
 import colors from "../assets/colors";
 
@@ -36,6 +40,8 @@ export default function Edit(props) {
 		},
 		clientId, setAttributes
 	} = props;
+
+	/*gets the panel height for using it in animation purposes*/
 	const panelReference = useRef();
 	if (panelReference.current) {
 		setAttributes({
@@ -44,20 +50,6 @@ export default function Edit(props) {
 		});
 	}
 	const blockProps = useBlockProps();
-	const togglePanel = () => {
-		setAttributes({
-			isPanelExpanded: !isPanelExpanded,
-		})
-	}
-	const titleHandleChange = (newContent) => {
-		setAttributes({panelTitle: newContent})
-	}
-	const contentHandleChange = (newContent) => {
-		setAttributes({
-			panelContent: newContent,
-			panelHeight: panelReference.current.scrollHeight
-		})
-	}
 	return (
 		<>
 			<InspectorControls>
@@ -73,7 +65,8 @@ export default function Edit(props) {
 								? 'Keep panel expanded.'
 								: 'Keep panel collapsed.'
 						}
-						onChange={togglePanel}
+						onChange={() => setAttributes({isPanelExpanded: !isPanelExpanded})
+						}
 					/>
 				</PanelBody>
 				<PanelBody title={__('Inner Border Settings', 'accordion-element')}>
@@ -237,11 +230,7 @@ export default function Edit(props) {
 				<ToolbarGroup>
 					<AlignmentToolbar
 						value={panelAlign}
-						onChange={(nextAlign) => {
-							setAttributes({
-								panelAlign: nextAlign,
-							});
-						}}
+						onChange={(nextAlign) => setAttributes({panelAlign: nextAlign})}
 					/>
 				</ToolbarGroup>
 			</BlockControls>
@@ -254,11 +243,11 @@ export default function Edit(props) {
 							aria-expanded={isPanelExpanded}
 							aria-controls={"sect" + panelId}
 							id={"accordion" + panelId + "ID"}
-							onClick={togglePanel}
+							onClick={() => setAttributes({isPanelExpanded: !isPanelExpanded})}
 					>
 						<RichText {...blockProps} tagName='span'
 								  className='accordion-title'
-								  onChange={titleHandleChange}
+								  onChange={(newContent) => setAttributes({panelTitle: newContent})}
 								  value={panelTitle}
 								  style={{
 									  color: titleColor,
@@ -282,7 +271,12 @@ export default function Edit(props) {
 					 }}>
 					<RichText
 						tagName='p'
-						onChange={contentHandleChange}
+						onChange={(newContent) => {
+							setAttributes({
+								panelContent: newContent,
+								panelHeight: panelReference.current.scrollHeight
+							})
+						}}
 						style={{
 							color: contentColor,
 							textAlign: panelAlign,

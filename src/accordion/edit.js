@@ -1,8 +1,7 @@
 import {__} from '@wordpress/i18n';
 
 import {useBlockProps, useInnerBlocksProps, InspectorControls, InnerBlocks} from '@wordpress/block-editor';
-import {__experimentalBorderControl as BorderControl} from '@wordpress/components';
-import {PanelBody, RangeControl} from '@wordpress/components';
+import {__experimentalBorderControl as BorderControl, PanelBody, RangeControl} from '@wordpress/components';
 import './editor.scss';
 import colors from "../assets/colors";
 
@@ -30,13 +29,13 @@ export default function Edit(props) {
 		<>
 			<InspectorControls>
 				<PanelBody title={__('Border Settings', 'accordion')}>
-					<BorderControl
+					<BorderControl /*control for border editing of Accordion wrapper*/
 						colors={colors}
 						onChange={(value) => setAttributes({border: value})}
 						value={border}
 						withSlider={true}
 					/>
-					<RangeControl
+					<RangeControl /*control which adds border radius of Accordion wrapper*/
 						label={__('Border Radius', 'accordion')}
 						value={borderRadius}
 						onChange={(borderRadius) =>
